@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
 import {routes} from './routes';
+import axios from 'axios';
 Vue.use(VueRouter)
 
+axios.defaults.baseURL = 'http://wd2468178309upkpi.wilddogio.com/'
 // TODO: 提取到routes.js
 
 // const routes = [
@@ -45,7 +47,13 @@ const router = new VueRouter({
   routes,
   mode: 'history',
   scrollBehavior (to, from, savedPosition) {
-    // ...
+    // return {x:0, y:100 }
+    // return { selector: '.btn'} // 顶到class btn
+    if(savedPosition){
+      return savedPosition  // 页面返回上次页面浏览的位置
+    }else{
+      return { x:0, y:0 }
+    }
   }
 })
 
