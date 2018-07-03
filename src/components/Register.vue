@@ -57,7 +57,7 @@ export default {
         }
         axios.post('/users.json', formData)
         .then(res =>{
-          this.$router.push({name:'loginLink'})
+          this.$router.push('/login')
         })
       }else{
         alert('两次密码不一致')

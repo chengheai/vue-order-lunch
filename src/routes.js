@@ -24,7 +24,8 @@ export const routes = [
     'orderingGuide': OrderingGuide,
     'delivery': Delivery,
     'history': History
-  } },
+    } 
+  },
   { path: '/menu', name: 'menuLink', component: Menu },
   { path: '/admin', component: Admin
     // beforeEnter: (to, from, next) => {

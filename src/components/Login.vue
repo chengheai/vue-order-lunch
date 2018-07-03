@@ -38,12 +38,18 @@ export default {
       password: ''
     }
   },
+  //组件内守卫
+  beforeRouteEnter: (to, from, next) => {
+    //  this.$store.dispatch('setUser',null)
+    next(vm => vm.$store.dispatch('setUser', null))
+  },
   methods:{
     onSubmit(){
-      axios.get('/user.json')
+      axios.get('/users.json')
         .then(res =>{
           // console.log(res.data)
           const data  = res.data;
+
           const users = [];
           for(let key in data){
             const user = data[key]
@@ -56,9 +62,11 @@ export default {
           })
           // console.log(result)
           if(result != null && result.length > 0){
+            this.$store.dispatch('setUser',result[0].email)
             this.$router.push('/home')
           }else{
-            alert('密码错误')
+            alert('账号或密码错误')
+             this.$store.dispatch('setUser',null)
           }
         })
     }

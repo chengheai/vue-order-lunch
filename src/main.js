@@ -3,9 +3,19 @@ import App from './App.vue'
 import VueRouter from 'vue-router';
 import {routes} from './routes';
 import axios from 'axios';
+import { store } from './store/store'
+import { toUnicode } from 'punycode';
+
+
 Vue.use(VueRouter)
 
-axios.defaults.baseURL = 'http://wd2468178309upkpi.wilddogio.com/'
+// 配置默认根路径
+axios.defaults.baseURL = 'https://wd1347713459zgtrvt.wilddogio.com/'
+
+/// menu  axios
+// axios.defaults.baseURL = 'https://wd3780466709glsyyc.wilddogio.com/menu.json'   
+// 配置Vue原型 ( 在任何组件中都可以使用axios )
+Vue.prototype.http = axios
 // TODO: 提取到routes.js
 
 // const routes = [
@@ -58,19 +68,22 @@ const router = new VueRouter({
 })
 
 // // 全局守卫
-// router.beforeEach((to, from, next) =>{
+router.beforeEach((to, from, next) =>{
 //   // alert('还没有登录，请先登录');
 //   // next();
 //   console.log('to:',to)
 
-//   // 判断store.getters.isLogin === false
-//   if(to.path == '/login' || to.path == '/register'){
-//     next();
-//   }else{
-//     alert('还没有登录，请先登录!');
-//     next('/login');
-//   }
-// })
+  // 判断store.getters.isLogin === false
+  // console.log(store.getters.isLogin === false)
+  if(to.path == '/login' || to.path == '/register'){
+    next();
+  }else if(store.getters.isLogin === true){
+    next();
+  }else{
+    alert('还没有登录，请先登录!');
+    next('/login');
+  }
+})
 
 // // 后置钩子
 // router.afterEach((to, from) =>{
@@ -80,5 +93,6 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
