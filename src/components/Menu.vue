@@ -14,7 +14,7 @@
           <tr>
             <td><strong>{{item.name}}</strong></td>
           </tr>
-          <tr v-for="option in item.options" :key="option.size + new Date().getTime()">
+          <tr v-for="option in item.options" :key="option.size">
             <td>{{option.size}}</td>
             <td>{{option.price}}</td>
             <td>

@@ -61,7 +61,7 @@ export default {
             return user.email === this.email && user.password === this.password
           })
           // console.log(result)
-          if(result != null && result.length > 0){
+          if(result && result != null && result.length > 0){
             this.$store.dispatch('setUser',result[0].email)
             this.$router.push('/home')
           }else{

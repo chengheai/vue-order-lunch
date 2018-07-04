@@ -13,6 +13,8 @@ import Delivery from './components/about/Delivery'
 import History from './components/about/History'
 import OrderingGuide from './components/about/OrderingGuide'
 
+// var OrderingGuide = require('./components/about/OrderingGuide')
+
 // 三级路由
 
 import Phone from './components/about/Phone';

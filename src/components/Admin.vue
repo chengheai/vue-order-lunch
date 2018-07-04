@@ -58,7 +58,7 @@ export default {
         return res.json()
       })
       .then(data =>{
-        // console.log(data)
+        console.log(data)
         let menuArray = []
         for(let key in data){
           // console.log(key)

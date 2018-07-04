@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueRouter from 'vue-router';
-import {routes} from './routes';
-import axios from 'axios';
+import VueRouter from 'vue-router'
+import {routes} from './routes'
+import axios from 'axios'
 import { store } from './store/store'
-import { toUnicode } from 'punycode';
 
 
 Vue.use(VueRouter)
@@ -55,7 +54,7 @@ Vue.prototype.http = axios
 
 const router = new VueRouter({
   routes,
-  mode: 'history',
+  mode: 'history',  // 去掉 #
   scrollBehavior (to, from, savedPosition) {
     // return {x:0, y:100 }
     // return { selector: '.btn'} // 顶到class btn
