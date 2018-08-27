@@ -40,7 +40,11 @@ export default {
   },
   //组件内守卫
   beforeRouteEnter: (to, from, next) => {
+    console.log('to:', to)
+    console.log('from:', from)
+    console.log('next:', next)
     //  this.$store.dispatch('setUser',null)
+    // TODO:退出时候清空用户信息
     next(vm => vm.$store.dispatch('setUser', null))
   },
   methods:{
@@ -67,6 +71,7 @@ export default {
           }else{
             alert('账号或密码错误')
              this.$store.dispatch('setUser',null)
+            //  this.$store.commit("setUser", null)
           }
         })
     }

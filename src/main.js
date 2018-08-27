@@ -9,7 +9,7 @@ import { store } from './store/store'
 Vue.use(VueRouter)
 
 // 配置默认根路径
-axios.defaults.baseURL = 'https://wd1347713459zgtrvt.wilddogio.com/'
+axios.defaults.baseURL = 'https://wd3780466709glsyyc.wilddogio.com/'
 
 /// menu  axios
 // axios.defaults.baseURL = 'https://wd3780466709glsyyc.wilddogio.com/menu.json'   
@@ -74,14 +74,15 @@ router.beforeEach((to, from, next) =>{
 
   // 判断store.getters.isLogin === false
   // console.log(store.getters.isLogin === false)
-  if(to.path == '/login' || to.path == '/register'){
-    next();
-  }else if(store.getters.isLogin === true){
-    next();
-  }else{
-    alert('还没有登录，请先登录!');
-    next('/login');
-  }
+  // if(to.path == '/login' || to.path == '/register'){
+  //   next();
+  // }else if(store.getters.isLogin === true){
+  //   next();
+  // }else{
+    // alert('还没有登录，请先登录!');
+    TODO:// { 当接口不能调通时：选用 }
+    next();   
+  // }
 })
 
 // // 后置钩子

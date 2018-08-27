@@ -85,6 +85,7 @@ export default {
   },
   created(){
     this.fethData()
+    console.log('tag', this.$store)
   },
   methods:{
     fethData(){

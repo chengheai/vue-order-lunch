@@ -41,7 +41,7 @@ export default {
   computed:{
     getMenuItems:{
       // 再vuex中获取数据
-      get(){
+      get() {
         // return this.$store.state.menuItems
 
          // 通过getters获取数据
