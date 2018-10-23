@@ -14,10 +14,10 @@ npm run dev
 npm run build
 
 
-<!-- ### 效果图
+### 效果图
 
 ![image](https://github.com/chengheai/vue-order-lunch/blob/master/src/assets/20180704165152.png)
 ![image](https://github.com/chengheai/vue-order-lunch/blob/master/src/assets/20180704165233.png)
 ![image](https://github.com/chengheai/vue-order-lunch/blob/master/src/assets/20180704165257.png)
 ![image](https://github.com/chengheai/vue-order-lunch/blob/master/src/assets/20180704165311.png)
-![image](https://github.com/chengheai/vue-order-lunch/blob/master/src/assets/20180704165330.png) -->
+![image](https://github.com/chengheai/vue-order-lunch/blob/master/src/assets/20180704165330.png)
